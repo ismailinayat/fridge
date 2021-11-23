@@ -8,7 +8,7 @@ export default function Welcome() {
 
   useEffect(() => {
     
-    setSocket(io("http://localhost:8000/"))
+    setSocket(io("https://fridge-backend421.herokuapp.com/"))
   },[])
 
   console.log(socket)
