@@ -50,7 +50,7 @@ function Card({img}) {
                   <div className="cardt__footer">
                     <p>
                       <span className="cardt__footer-value">$1,000/-</span>
-                      <span className="cardt__footer-text">per item</span>
+                      <span className="cardt__footer-text">per person</span>
                     </p>
                     <p className="cardt__ratings">
                       <span className="cardt__footer-value">4.5</span>
