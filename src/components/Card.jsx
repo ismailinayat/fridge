@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function Card({img}) {
     return (
@@ -51,7 +50,7 @@ function Card({img}) {
                   <div className="cardt__footer">
                     <p>
                       <span className="cardt__footer-value">$1,000/-</span>
-                      <span className="cardt__footer-text">per person</span>
+                      <span className="cardt__footer-text">per item</span>
                     </p>
                     <p className="cardt__ratings">
                       <span className="cardt__footer-value">4.5</span>

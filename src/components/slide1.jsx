@@ -12,13 +12,13 @@ function Slide() {
     101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120
   ])
 
-  const [scrollerLength, setScrollerLength] = useState(120);
+  const [scrollerLength] = useState(120);
   var HEIGHT = 7;
   var fps = 30;
 
   var myMessage = textToLED('Hello Everyone ');
-  let [leftPointer, setLeftPointer] = useState(scrollerLength + 1);
-  var rightPointer = 0;
+  let [leftPointer] = useState(scrollerLength + 1);
+
   let furthestLeftPoint = 0 - myMessage.length;
 
 
@@ -30,11 +30,7 @@ function Slide() {
     leftPointer = SCROLLER_LENGTH + 1;
 };*/
 
-  function clearLights(){
-    var lightsOn = document.querySelector('.on');
-    lightsOn.classList.remove('on');
-    lightsOn.classList.add('off');
-  }
+
 
 
   function setLight(row, col, state) {
@@ -53,7 +49,7 @@ function Slide() {
 
   function drawMessage(messageArray, leftPointer){
     var messageLength = messageArray.length;
-    var totalScrollLength = scrollerLength + messageLength;
+
     
     if(messageLength>0){
       
