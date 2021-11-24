@@ -1,15 +1,29 @@
 import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
-import { Link } from 'react-router-dom';
+import { Link/*, useNavigate*/ } from 'react-router-dom';
 
-export default function Welcome() {
 
+export default function Welcome(props) {
+
+  //const navigate = useNavigate()
   const [socket, setSocket] = useState(null)
 
   useEffect(() => {
     
-    setSocket(io("https://fridge-backend421.herokuapp.com/"))
+    setSocket(io("http://localhost:8000"))
+    
   },[])
+
+
+  const handleGame = (e) => {
+    socket.emit('game')
+  }
+
+  const handleShop = (e) => {
+    socket.emit('shop')
+  }
+
+
 
   console.log(socket)
   return (
@@ -20,7 +34,7 @@ export default function Welcome() {
           <img src='/game.jpg' alt='img of a game' className='header__left-item-photo'></img>
         </figure>
         <div className="btn__container">
-            <Link to='/game'><button className='btn btn__white'>PLAY GAME</button></Link>
+            <Link to='/game'><button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button></Link>
 
         </div>
       </div>
@@ -29,7 +43,7 @@ export default function Welcome() {
           <img src='/shop.jpg' alt='img of a shopping cart' className='header__right-item-photo'></img>
         </figure>
         <div className="btn__container">
-        <Link to='/shop'><button className='btn btn__white'>SHOP NOW</button></Link>
+        <Link to='/shop'><button className='btn btn__white' onClick={(e) => handleShop(e)}>SHOP NOW</button></Link>
         </div>
       </div>
     </header>
