@@ -4,8 +4,8 @@ import Slides from '../components/slides'
 import QR from '../components/QR'
 import  {io}  from 'socket.io-client';
 
-const socket = io("http://localhost:8000")
-//const socket = io("https://fridge-backend421.herokuapp.com")
+//const socket = io("http://localhost:8000")
+const socket = io("https://fridge-backend421.herokuapp.com")
 
 function Home() {
 

@@ -3,7 +3,8 @@ import { io } from 'socket.io-client';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-const socket = io("http://localhost:8000")
+//const socket = io("http://localhost:8000")
+const socket = io("https://fridge-backend421.herokuapp.com")
 
 export default function Welcome(props) {
 

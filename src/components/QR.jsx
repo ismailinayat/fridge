@@ -1,10 +1,12 @@
 import React from 'react'
 import QRCode from 'qrcode.react';
 
+    const qrValue="https://fridge-sigma.vercel.app/welcome"
+    //const qrValue="http://localhost:3000"
 function QR() {
     return (
         <div className='qr_scanner'>
-            <QRCode value="https://fridge-sigma.vercel.app/welcome" size={80}></QRCode>
+            <QRCode value={qrValue} size={80}></QRCode>
         </div>
     )
 }
