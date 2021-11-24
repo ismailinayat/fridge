@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { io } from 'socket.io-client';
-import { Link/*, useNavigate*/ } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
+
+const socket = io("http://localhost:8000")
 
 export default function Welcome(props) {
 
-  //const navigate = useNavigate()
-  const [socket, setSocket] = useState(null)
+  const navigate = useNavigate()
+
+
+  
 
   useEffect(() => {
-    
-    setSocket(io("https://fridge-backend421.herokuapp.com"))
-    
+    socket.emit('welcome')
   },[])
-
 
   const handleGame = (e) => {
     socket.emit('game')
@@ -22,6 +23,15 @@ export default function Welcome(props) {
   const handleShop = (e) => {
     socket.emit('shop')
   }
+
+  socket.on('game', ()=> {
+    navigate('/game')
+})
+
+
+socket.on('shop', ()=> {
+    navigate('/shop')
+})
 
 
 
