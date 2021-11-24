@@ -1,5 +1,5 @@
 //import {useEffect} from 'react'
-import { Link/*, useNavigate*/ } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Slides from '../components/slides'
 import QR from '../components/QR'
 import  {io}  from 'socket.io-client';
@@ -11,7 +11,7 @@ function Home() {
 
 
 
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
 
 /*
     socket.on('game', ()=> {
