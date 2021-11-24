@@ -10,7 +10,7 @@ export default function Welcome(props) {
 
   useEffect(() => {
     
-    setSocket(io("http://localhost:8000"))
+    setSocket(io("https://fridge-backend421.herokuapp.com"))
     
   },[])
 
