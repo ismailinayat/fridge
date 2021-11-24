@@ -25,8 +25,8 @@ function Home() {
 */
     socket.on('welcome', ()=> {
         console.log('this triggers')
-        //navigate('/welcome')
-        window.location.replace("/welcome")
+        navigate('/welcome')
+        //window.location.replace("/welcome")
     })
 
     return (
