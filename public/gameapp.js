@@ -1,6 +1,12 @@
 //var socket = io.connect('http://localhost:8000');
 const socket = io("https://fridge-backend421.herokuapp.com")
 
+socket.on('welcome', ()=> {
+    console.log('this triggers')
+    navigate('/welcome')
+    //window.location.replace("/welcome")
+})
+
 console.log(socket)
 
 socket.on('launch', (data)=> {
