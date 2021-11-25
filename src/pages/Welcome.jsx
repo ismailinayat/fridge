@@ -19,6 +19,8 @@ export default function Welcome(props) {
 
   const handleGame = (e) => {
     socket.emit('game')
+    window.location = 'https://fridge-sigma.vercel.app/game'
+    //window.location = "http://localhost:3000/game"
   }
 
   const handleShop = (e) => {
@@ -26,7 +28,9 @@ export default function Welcome(props) {
   }
 
   socket.on('game', ()=> {
-    navigate('/game')
+    //navigate('/game')
+    window.location = 'https://fridge-sigma.vercel.app/game'
+    //window.location = "http://localhost:3000/game"
 })
 
 
@@ -45,7 +49,7 @@ socket.on('shop', ()=> {
           <img src='/game.jpg' alt='img of a game' className='header__left-item-photo'></img>
         </figure>
         <div className="btn__container">
-            <Link to='/game'><button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button></Link>
+            <button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button>
 
         </div>
       </div>
@@ -62,3 +66,4 @@ socket.on('shop', ()=> {
 }
 
 
+//<Link to='/game'><button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button></Link>
