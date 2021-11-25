@@ -23,9 +23,12 @@
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
+      <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
     -->
     <title>React App</title>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.4.6/phaser.min.js"></script>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -41,13 +44,16 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 
-    <script>
 
+    <script src="/gameapp.js"></script>
+
+    <script>
+/*
 
       if (window.location.pathname === '/game') {
         console.log("in window")
         var game = new Phaser.Game(400, 625, Phaser.CANVAS, '', { preload: preload, create: create, update: update });
-  
+  */
   
       /*
       var config = {
@@ -69,7 +75,7 @@
   
       
       //var game = new Phaser.Game(config);
-      function preload() {
+    /*  function preload() {
   
   game.load.image('ball', 'assets/images/ball.png');
   game.load.image('hoop', 'assets/images/hoop.png');
@@ -303,7 +309,9 @@
   }
   
   }
-      }
+      }*/
     </script>
+
+
   </body>
 </html>
