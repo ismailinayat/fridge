@@ -3,8 +3,8 @@ const socket = io("https://fridge-backend421.herokuapp.com")
 
 socket.on('welcome', ()=> {
     console.log('this triggers')
-    navigate('/welcome')
-    //window.location.replace("/welcome")
+
+    window.location.replace("/welcome")
 })
 
 console.log(socket)
