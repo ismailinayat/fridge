@@ -7,9 +7,8 @@ const socket = io("https://fridge-backend421.herokuapp.com")
     window.location.replace("/welcome")
 })*/
 
-if (window.location.pathname === '/game' || window.location.pathname === '/shop') {
+if (window.location.pathname === '/game') {
     socket.on('welcome', ()=> {
-        console.log('this triggers')
     
         window.location.replace("/welcome")
     })

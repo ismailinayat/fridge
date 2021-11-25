@@ -1,7 +1,20 @@
 import React from 'react'
 import Card from '../components/Card'
+import { useNavigate } from 'react-router-dom';
+import  {io}  from 'socket.io-client';
+const socket = io("https://fridge-backend421.herokuapp.com")
+
+
 
 function Shop() {
+
+    const navigate = useNavigate()
+
+socket.on('welcome', ()=> {
+    console.log('this triggers')
+    navigate('/welcome')
+    //window.location.replace("/welcome")
+})
     return (
         <div className="shop-page">
         <div className="cardt-container">
