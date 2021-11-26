@@ -1,23 +1,45 @@
 import { useEffect } from 'react';
-import { io } from 'socket.io-client';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
+
+import {useSocket} from '../contexts/SocketProvider';
 
 
-//const socket = io("http://localhost:8000")
-const socket = io("https://fridge-backend421.herokuapp.com")
+
 
 export default function Welcome(props) {
 
   const navigate = useNavigate()
 
 
+  const socket = useSocket();
   
 
   useEffect(() => {
+    if (socket == null) return
     socket.emit('welcome')
-  },[])
+  },[socket])
+
+  useEffect(() => {
+
+    if (socket == null) return
+    socket.on('game', ()=> {
+      
+      window.location = 'https://fridge-sigma.vercel.app/game'
+      //window.location = "http://localhost:3000/game"
+  })
+  return () => socket.off('game')
+  })
+
+  useEffect(() => {
+    if (socket == null) return
+    socket.on('shop', ()=> {
+      navigate('/shop')
+  })
+  return () => socket.off('shop')
+  })
 
   const handleGame = (e) => {
+    console.log('game button is clicked')
     socket.emit('game')
     window.location = 'https://fridge-sigma.vercel.app/game'
     //window.location = "http://localhost:3000/game"
@@ -25,18 +47,13 @@ export default function Welcome(props) {
 
   const handleShop = (e) => {
     socket.emit('shop')
+    navigate('/joystick')
   }
 
-  socket.on('game', ()=> {
-    //navigate('/game')
-    window.location = 'https://fridge-sigma.vercel.app/game'
-    //window.location = "http://localhost:3000/game"
-})
 
 
-socket.on('shop', ()=> {
-    navigate('/shop')
-})
+
+
 
 
 
@@ -49,9 +66,7 @@ socket.on('shop', ()=> {
         </div>
 
         <div className="logo">
-          <h3>
-            Cadbury
-          </h3>
+          <img className="logo-img" src="/UI/Logo.png" alt="" />
         </div>
 
         <div className="welcome-heading">
@@ -66,14 +81,18 @@ socket.on('shop', ()=> {
           <div className='header__left'>
             
             <div className="btn__container">
-                <button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button>
+                <button className='btn btn__white' onClick={(e) => handleGame(e)}>
+                  <img src="/UI/play-game.png" alt="play game" />
+                </button>
             </div>
 
           </div>
 
           <div className='header__right' >
             <div className="btn__container">
-            <Link to='/shop'><button className='btn btn__white' onClick={(e) => handleShop(e)}>SHOP NOW</button></Link>
+            <button className='btn btn__white' onClick={(e) => handleShop(e)}>
+            <img src="/UI/back.png" alt="play game" />
+              </button>
             </div>
           </div>
 

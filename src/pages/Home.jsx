@@ -1,33 +1,27 @@
-//import {useEffect} from 'react'
+import {useEffect} from 'react'
 import {useNavigate } from 'react-router-dom';
 import Slides from '../components/slides'
 import QR from '../components/QR'
-import  {io}  from 'socket.io-client';
 
-//const socket = io("http://localhost:8000")
-const socket = io("https://fridge-backend421.herokuapp.com")
+import {useSocket} from '../contexts/SocketProvider';
 
 function Home() {
 
 
 
     const navigate = useNavigate()
+    const socket = useSocket();
 
-/*
-    socket.on('game', ()=> {
-        navigate('/game')
-    })
+    useEffect(() => {
+        if (socket == null) return
+        socket.on('welcome', ()=> {
+            console.log('this triggers')
+            navigate('/welcome')
+        })
 
-
-    socket.on('shop', ()=> {
-        navigate('/shop')
-    })
-*/
-    socket.on('welcome', ()=> {
-        console.log('this triggers')
-        navigate('/welcome')
-        //window.location.replace("/welcome")
-    })
+        return () => socket.off('welcome')
+    }, [socket, navigate])
+   
 
     return (
         <div>

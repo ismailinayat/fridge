@@ -28,11 +28,6 @@
     flex-direction: column;
     padding: 1rem;
 
-    &:focus {
-      border: none;
-      outline: 3px solid goldenrod;
-    }
-
     &:focus + .add-cart-btn {
 
       visibility: visible;
@@ -110,6 +105,8 @@
   
   }
 
+
+
   .add-cart-btn {
 
     margin-top: 1.5rem;
@@ -119,4 +116,13 @@
     border-radius: 10px;
     visibility: hidden;
   }
+}
+
+.selected {
+
+  outline: 3px solid goldenrod;
+}
+
+.add-cart-btn.btn-selected {
+  visibility: visible;
 }

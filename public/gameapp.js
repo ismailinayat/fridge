@@ -1,5 +1,5 @@
-//var socket = io.connect('http://localhost:8000');
-const socket = io("https://fridge-backend421.herokuapp.com")
+var socket = io.connect('http://localhost:8000');
+//const socket = io("https://fridge-backend421.herokuapp.com")
 
 /*socket.on('welcome', ()=> {
     console.log('this triggers')
@@ -9,9 +9,9 @@ const socket = io("https://fridge-backend421.herokuapp.com")
 
 if (window.location.pathname === '/game') {
     socket.on('welcome', ()=> {
-    
         window.location.replace("/welcome")
     })
+
 }
 
 console.log(socket)
@@ -32,7 +32,7 @@ socket.on('launch', (data)=> {
 		whoosh.play();
 	}
 
-
+	return () => socket.off('launch')
 })
 /*
 socket.on('createball', (data)=> {
@@ -58,7 +58,7 @@ var game = new Phaser.Game(400, 625, Phaser.CANVAS, '', { preload: preload, crea
 }
 function preload() {
 
-    game.load.image('ball', 'assets/images/dariymilk.png');
+    game.load.image('ball', 'assets/images/dairy.png');
     game.load.image('hoop', 'assets/images/hoop.png');
 		game.load.image('side rim', 'assets/images/side_rim.png');
 		game.load.image('front rim', 'assets/images/front_rim.png');
