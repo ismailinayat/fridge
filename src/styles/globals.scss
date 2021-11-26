@@ -11,6 +11,7 @@ $color-secondary-dark: #ff7730;
 $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;
 
+$color-violet: rgb(61, 1, 117);
 $color-light-grey-1 : #f7f7f7;
 
 $color-grey-dark : #777;
@@ -40,6 +41,8 @@ $font-weight-heavy-1: 500;
 @import "./components/card";
 @import "./components/shop";
 @import "./components/home";
+@import "./components/joystick";
+@import "./components/cart";
 
 
 
@@ -75,7 +78,8 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   color: $color-grey-dark-3;
-  //overflow: hidden;
+  overflow: hidden;
+  //transform: rotate(-90deg);
 }
 
 .welcome {
@@ -88,6 +92,10 @@ canvas {
   margin: 0 auto;
   border: thin solid black;
 }
+/*
+:focus {
+  outline: 3px solid goldenrod;
+}*/
 /*
 span {
   display: block;

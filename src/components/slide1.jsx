@@ -6,8 +6,8 @@ function slide1({text}) {
 
     <div className="slide__container">
       <h3>
-     {text}
-        </h3>
+        {text}
+      </h3>
     </div>
 
   )

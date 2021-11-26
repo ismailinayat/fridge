@@ -1,5 +1,5 @@
 //import {useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import Slides from '../components/slides'
 import QR from '../components/QR'
 import  {io}  from 'socket.io-client';
@@ -31,25 +31,17 @@ function Home() {
 
     return (
         <div>
-            <section className="section-video">
+            <section className="section-home">
 
                 <QR></QR>
                 <Slides></Slides>
-                <div className="bg-video">
-                    <video className="bg-video__content" autoPlay muted loop>
-                        <source src="/video.mp4" type="video/mp4"/>
-                        <source src="/video.webm" type="video/webm"/>
-                        Your browser is not supported!
-                    </video>
+                <div className="bg-image-container">
+
+                    <img className='bg-image' src="/UI/fridge-home.jpg" alt="fridge with cadburry chocolates in it" />
 
 
                 </div>
 
-
-            <div className="welcome">
-
-            <Link to='/welcome'>Welcome</Link>
-            </div>
                
             </section>
         </div>

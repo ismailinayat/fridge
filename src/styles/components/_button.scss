@@ -1,10 +1,10 @@
-.btn__container {
+/*.btn__container {
 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+}*/
 
 .btn {
     text-align: center;
@@ -15,15 +15,15 @@
         border: none;
         font-size: 1.5rem;
         outline: none;
-        background-color: transparent;
         cursor: pointer;
         display: inline-block;
-        padding: 1.4rem 4rem;
-        background-color: $color-primary-dark;
-        border-radius: 50rem;
+        padding: 4rem 7rem;
+        background-color: $color-violet;
+        border-radius: 1rem;
         position: relative;
         transition: all 0.2s;
         cursor: pointer;
+        font-size: 3rem;
 
         &:hover {
             transform: translateY(-3px);
@@ -32,7 +32,7 @@
         &:active {
             transform: translateY(-1.5px);
         }
-
+/*
         &::after {
             content: "";
             position: absolute;
@@ -50,5 +50,5 @@
         &:hover::after {
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
-        }
+        }*/
     }}

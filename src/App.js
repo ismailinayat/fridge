@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import Game from "./pages/Game";
 import Shop from "./pages/Shop";
+import JoyStick from "./pages/JoyStick"
+import Cart from "./pages/Cart"
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/welcome" element = {<Welcome/>}/>
         <Route path="/game" element = {<Game/>}/>
         <Route path="/shop" element = {<Shop/>}/>
+        <Route path="/joystick" element = {<JoyStick/>}/>
+        <Route path="/cart" element = {<Cart/>}/>
       </Routes>
     </Router>
   );

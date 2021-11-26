@@ -1,17 +1,19 @@
-.section-video {
+.section-home {
 
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 
-    .bg-video {
-
+    .bg-image-container {
+        overflow: hidden;
         height: 100%;
+        width: 100%;
 
-        .bg-video__content {
+        .bg-image {
             height: 100%;
             width: 100%;
             object-fit: fill;
+            overflow: hidden;
         }
     }
 

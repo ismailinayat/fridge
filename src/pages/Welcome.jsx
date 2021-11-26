@@ -43,25 +43,48 @@ socket.on('shop', ()=> {
   console.log(socket)
   return (
 
-    <header className='header'>
-      <div className='header__left'>
-        <figure className='header__left-item'>
-          <img src='/game.jpg' alt='img of a game' className='header__left-item-photo'></img>
-        </figure>
-        <div className="btn__container">
-            <button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button>
+    <div className="header-container">
+       <div className="bar top-bar">
 
         </div>
-      </div>
-      <div className='header__right' >
-        <figure className='header__right-item'>
-          <img src='/shop.jpg' alt='img of a shopping cart' className='header__right-item-photo'></img>
-        </figure>
-        <div className="btn__container">
-        <Link to='/shop'><button className='btn btn__white' onClick={(e) => handleShop(e)}>SHOP NOW</button></Link>
+
+        <div className="logo">
+          <h3>
+            Cadbury
+          </h3>
         </div>
+
+        <div className="welcome-heading">
+          <h3>
+            Select any one option
+          </h3>
+        </div>
+
+        <header className='header'>
+
+     
+          <div className='header__left'>
+            
+            <div className="btn__container">
+                <button className='btn btn__white' onClick={(e) => handleGame(e)}>PLAY GAME</button>
+            </div>
+
+          </div>
+
+          <div className='header__right' >
+            <div className="btn__container">
+            <Link to='/shop'><button className='btn btn__white' onClick={(e) => handleShop(e)}>SHOP NOW</button></Link>
+            </div>
+          </div>
+
+
+        </header>
+
+        <div className="bar bottom-bar">
+  
       </div>
-    </header>
+    </div>
+   
   )
 }
 

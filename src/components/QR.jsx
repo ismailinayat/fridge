@@ -6,7 +6,7 @@ import QRCode from 'qrcode.react';
 function QR() {
     return (
         <div className='qr_scanner'>
-            <QRCode value={qrValue} size={80}></QRCode>
+            <QRCode value={qrValue} size={110}></QRCode>
         </div>
     )
 }
