@@ -8,6 +8,7 @@ import Game from "./pages/Game";
 import Shop from "./pages/Shop";
 import JoyStick from "./pages/JoyStick"
 import Cart from "./pages/Cart"
+import LED from "./pages/LED"
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/shop" element = {<Shop/>}/>
         <Route path="/joystick" element = {<JoyStick/>}/>
         <Route path="/cart" element = {<Cart/>}/>
+        <Route path="/LED" element = {<LED/>}/>
       </Routes>
     </Router>
   );

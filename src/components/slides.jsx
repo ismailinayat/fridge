@@ -1,8 +1,16 @@
-
+import React, {useContext} from 'react'
+import { LedContext } from '../contexts/LedContext.js';
 import Slide from './slide1'
 
 
 function Slides() {
+
+    const {led} = useContext(LedContext)
+
+    const {led1, led2, led3, led4} = led;
+
+
+
 
     return (
         <div className="slides__container">
@@ -10,22 +18,22 @@ function Slides() {
 
                 <div className="slide-1">
 
-                    <Slide text="This is Slide 1"></Slide>
+                    <Slide text={led1}></Slide>
                 </div>
 
                 <div className="slide-2">
 
-                    <Slide text="This is Slide 2"></Slide>
+                    <Slide text={led2}></Slide>
                 </div>
 
                 <div className="slide-3">
 
-                    <Slide text="This is Slide 3"></Slide>
+                    <Slide text={led3}></Slide>
                 </div>
 
                 <div className="slide-4">
 
-                    <Slide text="This is Slide 4"></Slide>
+                    <Slide text={led4}></Slide>
                 </div>
                
  
