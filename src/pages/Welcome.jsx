@@ -17,18 +17,16 @@ export default function Welcome(props) {
 
   useEffect(() => {
     if (socket == null) return
-    console.log('welcome emit triggered')
     socket.emit('welcome')
-    console.log('this is reached as well')
+
   })
 
   useEffect(() => {
 
-    console.log('game trigger before socket == null')
     if (socket == null) return
-    console.log('game trigger after socket == null')
+
     socket.on('game', ()=> {
-      console.log('this is inside the socket game listener')
+
       window.location = 'https://fridge-sigma.vercel.app/game'
       //window.location = "http://localhost:3000/game"
   })
