@@ -6,6 +6,31 @@ const socket = io("https://fridgeproject.herokuapp.com")
 
     window.location.replace("/welcome")
 })*/
+if (window.location.pathname === '/game') {
+	function idleLogout() {
+		var t;
+		window.onload = resetTimer;
+		window.onmousemove = resetTimer;
+		window.onmousedown = resetTimer;  // catches touchscreen presses as well
+		window.ontouchstart = resetTimer; // catches touchscreen swipes as well
+		window.onclick = resetTimer;      // catches touchpad clicks as well
+		window.onkeydown = resetTimer;
+		window.addEventListener('scroll', resetTimer, true); // improved; see comments
+	
+		function yourFunction() {
+			// your function for too long inactivity goes here
+			// e.g. window.location.href = 'logout.php';
+			window.location.replace("/")
+		}
+	
+		function resetTimer() {
+			clearTimeout(t);
+			t = setTimeout(yourFunction, 150000);  // time is in milliseconds
+		}
+	}
+	idleLogout();
+}
+
 
 if (window.location.pathname === '/game') {
     socket.on('welcome', ()=> {
@@ -54,12 +79,12 @@ socket.on('release', ()=> {
 })
 
 if (window.location.pathname === '/game') {
-var game = new Phaser.Game(400, 625, Phaser.CANVAS, '', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(500, 625, Phaser.CANVAS, '', { preload: preload, create: create, update: update });
 }
 function preload() {
 
     game.load.image('ball', 'assets/images/dairy.png');
-    game.load.image('hoop', 'assets/images/hoop.png');
+    game.load.image('hoop', 'assets/images/basket-4.png');
 		game.load.image('side rim', 'assets/images/side_rim.png');
 		game.load.image('front rim', 'assets/images/front_rim.png');
 
