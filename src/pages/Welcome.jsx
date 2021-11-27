@@ -13,6 +13,7 @@ export default function Welcome(props) {
 
   const socket = useSocket();
   
+  console.log(socket)
 
   useEffect(() => {
     if (socket == null) return
@@ -28,7 +29,7 @@ export default function Welcome(props) {
       //window.location = "http://localhost:3000/game"
   })
   return () => socket.off('game')
-  })
+  }, [socket])
 
   useEffect(() => {
     if (socket == null) return
@@ -36,7 +37,7 @@ export default function Welcome(props) {
       navigate('/shop')
   })
   return () => socket.off('shop')
-  })
+  }, [socket, navigate])
 
   const handleGame = (e) => {
     console.log('game button is clicked')
