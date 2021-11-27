@@ -15,7 +15,7 @@ function Home() {
     useEffect(() => {
         if (socket == null) return
         socket.on('welcome', ()=> {
-            console.log('this triggers')
+            console.log('welcome on the home triggers')
             navigate('/welcome')
         })
 
