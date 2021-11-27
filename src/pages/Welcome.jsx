@@ -17,6 +17,7 @@ export default function Welcome(props) {
 
   useEffect(() => {
     if (socket == null) return
+    console.log('welcome emit triggered')
     socket.emit('welcome')
   },[socket])
 
